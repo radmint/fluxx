@@ -1,0 +1,70 @@
+﻿@model IndexViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!--<div class="container">
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-2">User</div>
+        <div class="col-4"><input type="text" id="userInput" /></div>
+    </div>
+    <div class="row">
+        <div class="col-2">Message</div>
+        <div class="col-4"><input type="text" id="messageInput" /></div>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-6">
+            <input type="button" id="sendButton" value="Send Message" />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <hr />
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <ul id="messagesList"></ul>
+    </div>
+</div>
+    -->
+<div class="row">
+    <div class="col-lg-6 col-12">
+        <form id="start-form">
+            <div class="form-group">
+                <input type="text" name="username" class="form-control" placeholder="Display name" aria-label="Display name" maxlength="15" required="required">
+            </div>
+            <button type="submit" class="btn btn-primary" id="start-game">Start new game</button>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6 col-12">
+        <p>OR</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6 col-12">
+        <form id="join-form">
+            <div class="form-group">
+                <input type="text" name="username" class="form-control" placeholder="Display name" aria-label="Display name" maxlength="15" required="required">
+            </div>
+            <div class="form-group">
+                <input type="text" name="gameId" class="form-control" placeholder="Game Id" aria-label="Game Id" maxlength="5" required="required">
+            </div>
+            <button type="submit" class="btn btn-primary" id="join-game">Join game</button>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/chat.js"></script>
+}

@@ -1,0 +1,34 @@
+﻿[
+    {
+      "CardTitle": "Play 2",
+      "CardSubtitle": "Replaces Play Rule",
+      "CardText": "Play 2 cards per turn. If you have fewer than that, play all your cards.",
+      "CardImage": "",
+      "RuleType": "Play",
+      "RuleAlteration": 2
+    },
+    {
+      "CardTitle": "Play 3",
+      "CardSubtitle": "Replaces Play Rule",
+      "CardText": "Play 3 cards per turn. If you have fewer than that, play all your cards.",
+      "CardImage": "",
+      "RuleType": "Play",
+      "RuleAlteration": 3
+    },
+    {
+      "CardTitle": "Draw 2",
+      "CardSubtitle": "Replaces Draw Rule",
+      "CardText": "Draw 2 cards per turn. If you just played this card, draw extra cards as needed to reach 2 cards drawn.",
+      "CardImage": "",
+      "RuleType": "Draw",
+      "RuleAlteration": 2
+    },
+    {
+      "CardTitle": "Draw 4",
+      "CardSubtitle": "Replaces Draw Rule",
+      "CardText": "Draw 4 cards per turn. If you just played this card, draw extra cards as needed to reach 2 cards drawn.",
+      "CardImage": "",
+      "RuleType": "Draw",
+      "RuleAlteration": 4
+    }
+]

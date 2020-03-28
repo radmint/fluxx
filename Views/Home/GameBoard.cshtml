@@ -1,0 +1,99 @@
+﻿@model GameBoardViewModel
+
+@{
+    ViewData["Title"] = "Game Board";
+}
+
+<div class="row">
+    <div class="col-lg-3 col-sm-6 col-12">
+        <!-- Draw pile -->
+        <p>Draw pile - @Model.DrawPile.Count left</p>
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Draw</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6 col-12">
+        <!-- Discard pile -->
+        <p>Discard pile - @Model.DiscardPile.Count card(s)</p>
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Discard</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <p>Active rules</p>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Active Rules Cards -->
+    @if (Model.ActiveRules.Count < 1)
+    {
+        <div class="col-lg-3 col-sm-6 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Play 1</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Draw 1</h5>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        foreach (var activeRule in Model.ActiveRules)
+        {
+            <div class="col-lg-3 col-sm-6 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@activeRule.CardTitle</h5>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <p>Active goals</p>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Active Goals Cards -->
+    @if (Model.ActiveGoals.Count < 1)
+    {
+        <div class="col-lg-3 col-sm-6 col-12">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">No active goals</h5>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        foreach (var activeGoal in Model.ActiveGoals)
+        {
+            <div class="col-lg-3 col-sm-6 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@activeGoal.CardTitle</h5>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>

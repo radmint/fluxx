@@ -1,0 +1,14 @@
+﻿[
+    {
+      "CardTitle": "Fairy Queen",
+      "CardText": "The Fairy + The Queen",
+      "CardImage": "",
+      "WinningSet": [ "Fairy", "Queen" ]
+    },
+    {
+      "CardTitle": "She Turned Me into a Frog!",
+      "CardText": "The Frog + The Witch",
+      "CardImage": "",
+      "WinningSet": [ "Frog", "Witch" ]
+    }
+]
