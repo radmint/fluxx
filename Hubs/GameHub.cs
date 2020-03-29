@@ -7,9 +7,6 @@ namespace Fluxx.Hubs
 {
     public interface IGameClient
     {
-        Task Turn(string player);
-        Task Concede();
-        Task Victory(string player, string[][] board);
         Task StartGame(string userName);
         Task JoinGame(string gameId, string userName);
         Task RenderBoard(Game board);
@@ -44,7 +41,6 @@ namespace Fluxx.Hubs
             {
                 throw ex;
             }
-
         }
 
         public async Task JoinGame(string gameId, string username)
@@ -155,18 +151,12 @@ namespace Fluxx.Hubs
         //}
         //}
 
-        public override async Task OnDisconnectedAsync(Exception exception)
-        {
-            //If game is complete delete it
-            var game = _repository.Games.FirstOrDefault(); //JUST GRABBING FIRST GAME WE SEE OPE
-            if (!(game is null))
-            {
-                await Groups.RemoveFromGroupAsync(Context.ConnectionId, game.Id);
-                await Clients.Group(game.Id).Concede();
-                _repository.Games.Remove(game);
-            }
+        //public override async Task OnDisconnectedAsync(Exception exception)
+        //{
+        //    //If game is complete delete it
+        //    _repository.Games.RemoveAll(x => x != null);
 
-            await base.OnDisconnectedAsync(exception);
-        }
+        //    await base.OnDisconnectedAsync(exception);
+        //}
     }
 }

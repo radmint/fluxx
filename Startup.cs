@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Fluxx.Hubs;
+using System;
 
 namespace Fluxx
 {
@@ -24,6 +25,9 @@ namespace Fluxx
             services.AddSignalR(o =>
             {
                 o.EnableDetailedErrors = true;
+                o.ClientTimeoutInterval = TimeSpan.FromSeconds(120);
+                o.HandshakeTimeout = TimeSpan.FromSeconds(30);
+                o.KeepAliveInterval = TimeSpan.FromSeconds(60);
             });
             services.AddSingleton<IGameRepository>(new GameRepository());
 

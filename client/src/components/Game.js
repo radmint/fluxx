@@ -16,7 +16,9 @@ export default class Game extends Component {
     }
 
     async componentDidMount() {        
-        const hubConnection = new HubConnectionBuilder().withUrl("/game").configureLogging(LogLevel.Information).build();
+        const hubConnection = new HubConnectionBuilder()
+            .withUrl("/game")
+            .configureLogging(LogLevel.Information).build();
 
         this.setState({ hubConnection }, () => {
             this.state.hubConnection
@@ -24,6 +26,7 @@ export default class Game extends Component {
                 .catch(err => console.log('Error while establishing connection :('));
 
             this.state.hubConnection.on('renderBoard', board => {
+                console.log('board rendering');
                 this.setState({ board: board })
             });
 
